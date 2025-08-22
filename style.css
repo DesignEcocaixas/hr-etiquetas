@@ -23,7 +23,7 @@ body {
     font-family: 'Poppins', serif;
     position: relative;
     /*COMENTAR O BACKGROUND EM CASO DE USO DE VÍDEO*/
-    background: linear-gradient(to bottom, #f4b804 20%, transparent 100%);
+    background: linear-gradient(to bottom, #0438f4 20%, transparent 100%);
     
     /* Animação de entrada */
     animation: fadeIn 1.5s ease-in forwards;
@@ -77,7 +77,7 @@ body {
 .text {
     width: 100%;
     text-align: center;
-    font-family: 'Droid Serif', sans-serif;
+    font-family: sans-serif;
     padding: 20px 0;
     color: #fff;
     font-size: 1.5em;
@@ -86,8 +86,11 @@ body {
 /*FRASE DO MEIO*/
 h2 {
     font-weight: bold;
-    font-style: italic;
-    text-shadow: 3px 3px 0 #930fec;
+    font-size: 32px;
+}
+
+p{
+    font-size: 18px;
 }
 
 .content {
@@ -105,8 +108,8 @@ h2 {
 
 /*ESTILIZAÇÃO DOS BOTÕES*/
 .link-container {
-    background-color: #ec0f0f;
-    background-image: radial-gradient(#b10000 0.5px, transparent 0.5px);
+    background-color: #130fec;
+    background-image: radial-gradient(#0038b1 0.5px, transparent 0.5px);
     background-size: 5px 5px;
     border-radius: 40px;
     /*ALTERA A LARGURA DOS BOTÕES*/
@@ -200,8 +203,8 @@ h2 {
     width: 200px;
     padding: 20px;
     height: 90px;
-    background-color: #ec0f0f;
-    background-image: radial-gradient(#b10000 0.5px, transparent 0.5px);
+    background-color: #130fec;
+    background-image: radial-gradient(#0038b1 0.5px, transparent 0.5px);
     background-size: 5px 5px;
     border-radius: 10px 10px 0px 0px;
     position: absolute;
