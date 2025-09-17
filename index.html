@@ -6,74 +6,48 @@
 <title>HR Etiquetas — Interativo</title>
 <style>
   :root{
-    /* Ajuste fino das áreas clicáveis (em vw/vh) */
-    --email-x: 12vw;  --email-y: 72vh;  --email-w: 26vw;  --email-h: 14vh;
-    --fone-x:  37vw;  --fone-y: 72vh;   --fone-w: 26vw;   --fone-h: 14vh;
-    --zap-x:   62vw;  --zap-y:  72vh;   --zap-w: 26vw;    --zap-h:  14vh;
+    /* 🔼 Subimos os hotspots: diminuí o top de 72vh → 64vh */
+    --email-x: 12vw;  --email-y: 64vh;  --email-w: 26vw;  --email-h: 14vh;
+    --fone-x:  37vw;  --fone-y: 64vh;   --fone-w: 26vw;   --fone-h: 14vh;
+    --zap-x:   62vw;  --zap-y:  64vh;   --zap-w: 26vw;    --zap-h:  14vh;
 
-    /* Coloque o caminho da sua imagem aqui */
     --bg-url: url('bg.png');
   }
 
-  /* Zera margens e usa toda a viewport */
   html, body {
     margin: 0;
     height: 100%;
   }
 
-  /* Camada de fundo com a imagem em tela cheia */
   .bg {
     position: fixed;
     inset: 0;
     background: var(--bg-url) center center / cover no-repeat;
-    /* Se precisar preservar 100% da imagem sem cortes, troque por: 
-       background: var(--bg-url) center center / contain no-repeat, #0f2237; */
     z-index: -1;
   }
 
-  /* Camada de interação (hotspots) */
   .hotspot {
     position: fixed;
     display: block;
-    /* Transparente, mas acessível ao toque/clique */
-    background: rgba(0,0,0,0); 
-    /* Para acessibilidade no teclado: mostrar foco */
-    outline: none;
+    background: rgba(0,0,0,0);
   }
   .hotspot:focus-visible {
-    /* Ative um contorno quando navegar por teclado */
     box-shadow: 0 0 0 3px rgba(255,255,255,.9), 0 0 0 6px rgba(0,173,239,.9);
     border-radius: 12px;
   }
-  /* Áreas específicas (posições iniciais — ajuste se necessário) */
+
   .hs-email { left: var(--email-x); top: var(--email-y); width: var(--email-w); height: var(--email-h); }
   .hs-fone  { left: var(--fone-x);  top: var(--fone-y);  width: var(--fone-w);  height: var(--fone-h); }
-  .hs-zap   { left: var(--zap-x);   top: var(--zap-y);   width: var(--zap-w);   height: var(--zap-h);  }
-
-  /* Tornar toda a tela clicável? coloque elementos adicionais parecidos acima */
-
-  /* Área segura em iOS (opcional) */
-  @supports(padding:max(0px)) {
-    .hotspot { 
-      /* Ajusta se a home bar do iPhone cobrir algo */
-      margin-bottom: calc(env(safe-area-inset-bottom,0px));
-    }
-  }
-
-  /* Modo debug (para ver os hotspots). 
-     Remova os comentários abaixo enquanto ajusta as posições. */
-  /* .hotspot { background: rgba(0,255,255,.2); border: 2px dashed rgba(255,255,255,.8); } */
+  .hs-zap   { left: var(--zap-x);   top: var(--zap-y);   width: var(--zap-w);   height: var(--zap-h); }
 </style>
 </head>
 <body>
 
-  <!-- Fundo -->
   <div class="bg" aria-hidden="true"></div>
 
-  <!-- Hotspots: troque os links abaixo pelo que você precisa -->
-  <a class="hotspot hs-email" href="mailto: atendimento@hrprint.com.br" aria-label="Enviar e-mail"></a>
-  <a class="hotspot hs-fone"  href="tel:+5571992981532" aria-label="Ligar por telefone"></a>
-  <a class="hotspot hs-zap"   href="http://api.whatsapp.com/send?1=pt_BR&phone=5571992981532" target="_blank" rel="noopener" aria-label="Chamar no WhatsApp"></a>
+  <a class="hotspot hs-email" href="mailto:contato@hretiquetas.com.br" aria-label="Enviar e-mail"></a>
+  <a class="hotspot hs-fone"  href="tel:+5571999999999" aria-label="Ligar por telefone"></a>
+  <a class="hotspot hs-zap"   href="https://wa.me/5571999999999?text=Olá!%20Vim%20pelo%20site." target="_blank" rel="noopener" aria-label="Chamar no WhatsApp"></a>
 
 </body>
 </html>
